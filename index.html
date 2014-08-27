@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+  <style type="text/css">
+    li {list-style:none;text-indent:0;margin:5px 0 3px -25px;}
+  </style>
+<script src="//code.jquery.com/jquery.min.js"></script>
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" type="text/css" />
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+<script src="app.js"></script>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+</head>
+<body ng-app="myApp">
+  <div ng-controller="TestController">
+    <div class="form-group">
+  <form class="form-inline" name="frm" ng-submit="addTodo()">
+    <input class="form-control" type="text" name="newTodo" ng-model="newTodo" required placeholder="new todo"/>
+    <button class="btn btn-xs btn-success" ng-disabled="frm.$invalid" type="submit"><span class="fa fa-plus"></span> Add</button>
+    </form>
+    </div>
+      <button class="btn btn-lg btn-danger" ng-click="clearCompleted()">
+        <span class="fa fa-trash-o"></span>
+        Clear Completed
+    </button>
+       <ul class="list-unstyled">
+      <li class="checkbox" ng-repeat="todo in todos">
+        <input type="checkbox" ng-model="todo.done" />
+        <span ng-class="{'btn  disabled':todo.done}">{{todo.title}}</span>
+      </li>
+    </ul>
+    <p class="{{ data.strappy }}">Make me all strappy do</p>
+    <select ng-model="data.strappy">
+      <option>btn btn-primary</option>
+      <option>btn btn-info</option>
+      <option>btn btn-success</otpion>
+      <option>btn btn-warning</option>
+      <option>btn btn-danger</option>
+      <option>btn btn-default</option>
+    </select>
+  </div>     
+</body>
+</html>
