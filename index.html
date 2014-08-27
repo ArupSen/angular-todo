@@ -2,44 +2,49 @@
 <html>
 <head>
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-  <style type="text/css">
-    li {list-style:none;text-indent:0;margin:5px 0 3px -25px;}
-  </style>
 <script src="//code.jquery.com/jquery.min.js"></script>
-<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" type="text/css" media="screen" charset="utf-8">
 <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
 <script src="app.js"></script>
-  <meta charset="utf-8">
-  <title>JS Bin</title>
+<meta charset="utf-8">
+<title>Angular To do app - the basic hello world app with js frameworks</title>
 </head>
 <body ng-app="myApp">
-  <div ng-controller="TestController">
-    <div class="form-group">
-  <form class="form-inline" name="frm" ng-submit="addTodo()">
-    <input class="form-control" type="text" name="newTodo" ng-model="newTodo" required placeholder="new todo"/>
-    <button class="btn btn-xs btn-success" ng-disabled="frm.$invalid" type="submit"><span class="fa fa-plus"></span> Add</button>
+<div class="container" ng-controller="TestController">
+  <div class="form-group">
+    <form class="form-inline" name="frm" ng-submit="addTodo()">
+      <input class="form-control" type="text" name="newTodo" ng-model="newTodo" required placeholder="new todo"/>
+      <button class="btn btn-success" ng-disabled="frm.$invalid" type="submit"><span class="fa fa-plus"></span> Add</button>
     </form>
-    </div>
-      <button class="btn btn-lg btn-danger" ng-click="clearCompleted()">
-        <span class="fa fa-trash-o"></span>
-        Clear Completed
-    </button>
-       <ul class="list-unstyled">
-      <li class="checkbox" ng-repeat="todo in todos">
-        <input type="checkbox" ng-model="todo.done" />
-        <span ng-class="{'btn  disabled':todo.done}">{{todo.title}}</span>
-      </li>
-    </ul>
-    <p class="{{ data.strappy }}">Make me all strappy do</p>
-    <select ng-model="data.strappy">
-      <option>btn btn-primary</option>
-      <option>btn btn-info</option>
-      <option>btn btn-success</otpion>
-      <option>btn btn-warning</option>
-      <option>btn btn-danger</option>
-      <option>btn btn-default</option>
-    </select>
+  </div>
+  <button class="btn btn-danger" ng-click="clearCompleted()">
+    <span class="fa fa-trash-o"></span>
+    Clear Completed
+  </button>
+  <ul class="list-unstyled">
+    <li class="checkbox" ng-repeat="todo in todos">
+    <input type="checkbox" ng-model="todo.done" />
+    <span ng-class="{'text-muted':todo.done}">{{todo.title}}</span>
+    </li>
+  </ul>
+  <div class="panel panel-default col-md-6">
+    <div class="panel-heading"><h4>Hello Angular</h3></div>
+    <div class="panel-body"><p>This is an angular test app. The basic "Hello World" app for JavaScript frameworks is a To Do List app.</p>
+      <p>What I'm also doing here is testing out twitter bootstrap as well as the Font Awesome icons</p>
+    <p>None of your data will be saved so when you refresh it's gone!</p></div>
   </div>     
+  <!--
+  <p class="{{ data.strappy }}">Make me all strappy do</p>
+  <select ng-model="data.strappy">
+    <option>btn btn-primary</option>
+    <option>btn btn-info</option>
+    <option>btn btn-success</option>
+    <option>btn btn-warning</option>
+    <option>btn btn-danger</option>
+    <option>btn btn-default</option>
+  </select>
+-->
+</div>
 </body>
 </html>
